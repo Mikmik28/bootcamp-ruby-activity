@@ -26,7 +26,7 @@ Make sure when choosing use_potion, and when no potions left,
 let the player/enemy choose another actions
 
 ## Bonus Challenge!!! (Only when there's an extra time)
-5. Create a method where player can defend in `arena.rb`.
+5. Create a method where player can defend in `arena.rb`. And add it to your actions
 
 6. add randomness for the damage like critical chance
 
