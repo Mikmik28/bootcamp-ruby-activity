@@ -12,9 +12,6 @@ ACTIONS will be: attack, and use_potion
 Make sure when choosing use_potion, and when no potions left,
 let the player/enemy choose another actions
 
-HINTS:
-- use `ARRAY.sample` to randomly choose one object inside an array
-
 ## Bonus Challenge!!! (Only when there's an extra time)
 5. Create a method where player can defend in `arena.rb`.
 
