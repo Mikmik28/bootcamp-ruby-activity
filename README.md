@@ -1,5 +1,18 @@
 # Text-based arena RPG activity
 
+## Usage
+Run irb in your terminal
+```
+load "player.rb"
+load "arena.rb"
+
+player = Player.new("John Wick")
+enemy = Player.new("Marquis")
+
+Arena.new(player: player, enemy: enemy).start
+```
+
+## Activity
 0. Open `player.rb` and `arena.rb`
 1. In `player.rb`, Define a method where player can heal using potions
 
