@@ -11,7 +11,16 @@ class Player
     @def = 5
     @potions = MAX_POTIONS_QTY
   end
-
+  
+def heal 
+  if potion > 0
+    hp = hp + 15
+    potions = potions - 1
+  else
+    puts "not enough potion"
+  end
+end
+    
   # 1. Create a method where player can heal using potions and reduce the player's potion amount
   # Specs: Using potion can heal 15 hp
   def use_potion
