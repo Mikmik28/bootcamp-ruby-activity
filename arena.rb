@@ -50,8 +50,5 @@ class Arena
     puts "#{attacker.name} attacks #{target.name} for #{damage} damage!"
   end
   
-  def defend(player)
-    player.def *= 1.5 # Defense is multiplied by 1.5
-    puts "#{player.name} defends!"
-  end
+
 end
