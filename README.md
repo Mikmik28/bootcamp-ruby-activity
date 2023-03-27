@@ -1,16 +1,5 @@
 # Text-based arena RPG activity
 
-## To start the game. Run this:
-Run irb in your terminal
-```
-load "player.rb"
-load "arena.rb"
-
-player = Player.new("John Wick")
-enemy = Player.new("Marquis")
-
-Arena.new(player: player, enemy: enemy).start
-```
 
 ## Activity
 0. Clone this repo to your machine and open the folder in your preferred editor
@@ -40,4 +29,16 @@ Use `gets.chomp` to get the user's input
 ```
 foo = gets.chomp # Inputs bar
 puts foo # Output: bar
+```
+
+## To start the game. Run this:
+Run irb in your terminal
+```
+load "player.rb"
+load "arena.rb"
+
+player = Player.new("John Wick")
+enemy = Player.new("Marquis")
+
+Arena.new(player: player, enemy: enemy).start
 ```
