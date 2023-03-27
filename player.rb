@@ -12,14 +12,14 @@ class Player
     @potions = MAX_POTIONS_QTY
   end
   
-    
   # 1. Create a method where player can heal using potions and reduce the player's potion amount
   # Specs: Using potion can heal 15 hp
   def use_potion
     # Prevent using of potions when no more potions left. Hint: use guard clause here
-    # enter code here
-    hp = hp += 15
-    potions = potions -= 1
-    puts "#{name} used potions."
+    return puts "#{name} has no more potions left." if potions.zero?
+
+    self.hp += 15
+    self.potions -= 1
+    puts "#{name} used potion. #{name}'s HP increased to #{hp} and has #{potions} potions left."
   end
 end
