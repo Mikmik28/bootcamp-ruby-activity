@@ -1,8 +1,8 @@
 class Player
   MAX_POTIONS_QTY = 5.freeze
 
-  attr_accessor :name, :potions, :hp
-  attr_reader :atk, :def
+  attr_accessor :name, :potions, :hp, :def
+  attr_reader :atk
 
   def initialize(name)
     @name = name
@@ -17,6 +17,10 @@ class Player
   def use_potion
     # Prevent using of potions when no more potions left. Hint: use guard clause here
     # enter code here
+    return if(potions < 1)    
+
+    hp += 15
+    potions -= 1
 
     puts "#{name} used potions."
   end
