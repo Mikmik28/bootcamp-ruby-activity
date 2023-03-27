@@ -19,8 +19,8 @@ class Player
     # enter code here
     return if(potions < 1)    
 
-    hp += 15
-    potions -= 1
+    self.hp += 15
+    self.potions -= 1
 
     puts "#{name} used potions."
   end
