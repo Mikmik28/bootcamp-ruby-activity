@@ -31,6 +31,7 @@ class Arena
         puts "Your health: #{player.hp}"
         puts "#{enemy.name}'s health: #{enemy.hp}"
       end
+
     end
 
     if player.hp > 0
