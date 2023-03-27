@@ -38,3 +38,5 @@ class Arena
     # 5.Challenge: Create a method where player can defend
     # Specs: Defending can make the defender's defense x1.5 in 1 turn
 end
+
+#test
