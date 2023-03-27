@@ -5,7 +5,7 @@ class Arena
   # enter code here
   attr_reader :player, :enemy
   turn = 0
-  ACTIONS = ["attack", "potion"]
+  ACTIONS = ["attack", "potion", "defend"]
 
   def initialize(player:, enemy:)
     # 2. Create an instance variable for player and enemy
@@ -42,41 +42,37 @@ class Arena
   end
 
   private
-  def attack(attacker, target)
-    damage = attacker.atk - target.def
-    target.hp -= damage
-
-    puts "#{attacker.name} attacks #{target.name} for #{damage} damage!"
-  end
-
   def do_random_action(user, target)
+    #reset user stats before doing a new action
+    user.reset_stats
+
     case ACTIONS.sample
     when "attack"
-      attack(user, target)
+      user.attack(target)
       
     when "potion"
       if(user.potions < 1)
-        attack(user, target)
+        user.attack(target)
       else
         user.use_potion
       end
 
+    when "defend"
+      user.defend
+
     else 
-      puts "defend - shouldn't happen?"
+      puts "shouldn't happen"
     end
   end
   # 5.Challenge: Create a method where player can defend
   # Specs: Defending can make the defender's defense x1.5 in 1 turn
-  # def defend(defender)
-  #   defender.def *= 1.5
-  # end
 
   # def reset_round()
   # end
 end
 
-p1 = Player.new("player 1")
-e1 = Player.new("enemy 1")
+p1 = Player.new("John Wick")
+e1 = Player.new("Marquis")
 
 g_arena = Arena.new(player: p1, enemy: e1)
 
