@@ -13,7 +13,8 @@ Arena.new(player: player, enemy: enemy).start
 ```
 
 ## Activity
-0. Open `player.rb` and `arena.rb`
+0. Clone this repo to your machine and open the folder in your preferred editor
+
 1. In `player.rb`, Define a method where player can heal using potions
 
 2. In `arena.rb`, Create an instance variable for player and enemy
