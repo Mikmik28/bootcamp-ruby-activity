@@ -27,7 +27,7 @@ puts "===START ROUND==="
         action = ACTIONS.sample
         if action == "attack"
           attack(player, enemy)
-        elsif player.potions < 0
+        elsif player.potions <= 0
           puts "#{player.name} has no more potions so #{player.name} attacks #{enemy.name}"
           attack(player, enemy)
         else
@@ -43,7 +43,7 @@ puts "===START ROUND==="
         attack(enemy, player)
       elsif action2 == "defend" &&  action == "attack"
         defend(enemy, player)
-      elsif enemy.potions < 0
+      elsif enemy.potions <= 0
         puts "#{enemy.name} has no more potions so #{enemy.name} attacks #{player.name}"
         attack(enemy, player)
       else
