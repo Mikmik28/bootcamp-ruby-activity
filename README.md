@@ -1,6 +1,6 @@
 # Text-based arena RPG activity
 
-## Usage
+## To start the game. Run this:
 Run irb in your terminal
 ```
 load "player.rb"
