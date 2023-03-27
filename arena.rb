@@ -1,22 +1,37 @@
 class Arena
-  # 3. add a reader for both player and enemy
-  # enter code here
+  attr_reader :player, :enemy # 3. add a reader for both player and enemy
 
   def initialize(player:, enemy:)
-    # 2. Create an instance variable for player and enemy
-    # enter code here
+    @player = player # 2. Create an instance variable for player and enemy
+    @enemy = enemy
   end
 
   def start
     puts "Welcome to the Arena!"
     puts "You are fighting #{enemy.name}!"
     while player.hp > 0 && enemy.hp > 0
-      # 4. Implement turns. Player and Enemy will do a random action.
-      # ACTIONS are: attack and use_potion
-      # enter code here
+      players = [player, enemy].shuffle # Shuffle the array to randomize turn order
+      
+      players.each do |p| # Each player takes a turn
+        if p == player
+          puts "Your turn!"
+        else
+          puts "#{enemy.name}'s turn!"
+        end
+        
+        action = rand(2) # Randomly choose an action: attack or use potion
+        
+        case action
+        when 0 # Attack
+          attack(p, p == player ? enemy : player)
+        when 1 # Use potion
+          p.use_potion
+        end
+        
+        puts "Your health: #{player.hp}"
+        puts "#{enemy.name}'s health: #{enemy.hp}"
+      end
 
-      puts "Your health: #{player.hp}"
-      puts "#{enemy.name}'s health: #{enemy.hp}"
     end
 
     if player.hp > 0
@@ -28,13 +43,12 @@ class Arena
 
   private
 
-    def attack(attacker, target)
-      damage = attacker.atk - target.def
-      target.hp -= damage
+  def attack(attacker, target)
+    damage = attacker.atk - target.def
+    target.hp -= damage
 
-      puts "#{attacker.name} attacks #{target.name} for #{damage} damage!"
-    end
+    puts "#{attacker.name} attacks #{target.name} for #{damage} damage!"
+  end
+  
 
-    # 5.Challenge: Create a method where player can defend
-    # Specs: Defending can make the defender's defense x1.5 in 1 turn
 end
