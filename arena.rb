@@ -10,16 +10,27 @@ class Arena
     puts "Welcome to the Arena!"
     puts "You are fighting #{enemy.name}!"
     while player.hp > 0 && enemy.hp > 0
-      # 4. Implement turns. Player and Enemy will do a random action.
-      # ACTIONS are: attack and use_potion
-      # enter code here
-      attack(player, enemy)
-      player.use_potion
-      attack(enemy, player)
-      enemy.use_potion
-
-      puts "Your health: #{player.hp}"
-      puts "#{enemy.name}'s health: #{enemy.hp}"
+      players = [player, enemy].shuffle # Shuffle the array to randomize turn order
+      
+      players.each do |p| # Each player takes a turn
+        if p == player
+          puts "Your turn!"
+        else
+          puts "#{enemy.name}'s turn!"
+        end
+        
+        action = rand(2) # Randomly choose an action: attack or use potion
+        
+        case action
+        when 0 # Attack
+          attack(p, p == player ? enemy : player)
+        when 1 # Use potion
+          p.use_potion
+        end
+        
+        puts "Your health: #{player.hp}"
+        puts "#{enemy.name}'s health: #{enemy.hp}"
+      end
     end
 
     if player.hp > 0
@@ -37,7 +48,9 @@ class Arena
 
     puts "#{attacker.name} attacks #{target.name} for #{damage} damage!"
   end
-
-  # 5.Challenge: Create a method where player can defend
-  # Specs: Defending can make the defender's defense x1.5 in 1 turn
+  
+  def defend(player)
+    player.def *= 1.5 # Defense is multiplied by 1.5
+    puts "#{player.name} defends!"
+  end
 end
