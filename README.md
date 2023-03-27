@@ -5,6 +5,8 @@
 0. Clone this repo to your machine and open the folder in your preferred editor
 
 1. In `player.rb`, Define a method where player can heal using potions
+Hint: use `self.hp` and `self.potions` to make the instance object change its attributes.
+You can of this like in javascript, `this.state.hp` `this.state.potions`
 
 2. In `arena.rb`, Create an instance variable for player and enemy
 
