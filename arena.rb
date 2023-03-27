@@ -14,6 +14,7 @@ class Arena
       # ACTIONS are: attack and use_potion
       # enter code here
       attack(player, enemy)
+      attack(enemy, player)
       puts "Your health: #{player.hp}"
       puts "#{enemy.name}'s health: #{enemy.hp}"
     end
