@@ -17,7 +17,12 @@ class Player
   def use_potion
     # Prevent using of potions when no more potions left. Hint: use guard clause here
     # enter code here
-
+    return if potions.zero?
+    
+    self.hp += 15
+    self.potions -=  1
     puts "#{name} used potions."
   end
+
+
 end
