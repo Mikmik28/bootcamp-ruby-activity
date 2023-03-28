@@ -11,7 +11,7 @@ class Arena
     puts "Welcome to the Arena!"
     puts "You are fighting #{enemy.name}!"
     while player.hp > 0 && enemy.hp > 0
-      # 4. Implement turns. Player and Enemy will do a random action.
+      # 4. Implement actions where Player and Enemey with both fight. Player and Enemy will do a random action.
       # ACTIONS are: attack and use_potion
       # enter code here
 
