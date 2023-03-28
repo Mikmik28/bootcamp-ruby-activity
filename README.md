@@ -12,7 +12,7 @@ You can think of this like in javascript, `this.state.hp` `this.state.potions`
 
 3. In `arena.rb`, Add a reader for both player and enemy
 
-4. In `arena.rb`, Implement turns. Player and Enemy will do a random action.
+4. Implement actions where Player and Enemey with both fight. Player and Enemy will do a random action.
 ACTIONS will be: attack, and use_potion
 Make sure when choosing use_potion, and when no potions left,
 let the player/enemy choose another actions
